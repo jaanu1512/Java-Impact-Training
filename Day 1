@@ -1,0 +1,47 @@
+Data/ Seating Arrangements:
+
+1) In a college auditorium, seats are arranged in rows and columns. Each seat is assigned a unique seat number starting from 1. Write a Python program that takes the number of rows, number of columns, and a seat number as input, and prints whether the seat belongs to the CSE department or the ECE department based on its position
+ If the student sits in first row, first column and last column print the output as "CSE" , if the student sits in the middle print "ECE". If the input exceeds number of seats print "Seat No. exceeds number of seats"
+
+Code:
+
+Row = int(input("No. of Rows: "))
+Col = int(input("No. of cols: "))
+Seat = int(input("Enter Seat no.: "))
+
+if Seat <= Col or Seat % Col == 0 or Seat % Col == 1:
+        print("CSE")
+        
+    else:
+        print("ECE")
+
+    else:
+        print("Seat No. exceeds number of seats:")
+
+
+
+Data Crunching:
+
+2) Write a Java program that reads a number as a string input from the user and calculates the sum of the first and last digits of the number.
+
+Code:
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int lastDigit = num % 10;
+
+        int firstDigit = num;
+        while (firstDigit >= 10) {
+            firstDigit /= 10;
+        }
+
+        int sum = firstDigit + lastDigit;
+        System.out.println("Sum of first and last digits: " + sum);
+    }
+}
