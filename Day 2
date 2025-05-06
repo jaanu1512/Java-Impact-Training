@@ -29,9 +29,7 @@ Coin Distribution Among Friends
 Write a Java program to:
 
 Take total coins as input.
-
 Take Ben's and Black's share percentages as input.
-
 Print each person's share.
 
 
@@ -99,6 +97,7 @@ public class Main {
 Collatz Sequence 
 
 4)Write a Java program to generate the Collatz sequence  for a given number.
+
 if n is even print n=n/2
 if n is odd print n=3n+1
 until it becomes 1.
