@@ -1,0 +1,210 @@
+Reversing a 3-digit Number
+
+1)Write a Java program that accepts a 3-digit number from the user and prints its reversed form.
+
+CODE:
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a 3-digit number: ");
+        int num = sc.nextInt();
+
+        int first = num / 100;
+        int middle = (num / 10) % 10;
+        int last = num % 10;
+
+        int reversed = (last * 100) + (middle * 10) + first;
+
+        System.out.println("Reversed number: " + reversed);
+    }
+}
+
+
+Coin Distribution Among Friends
+
+2)Ben, Black, and three other friends are distributing a set of coins. Ben receives a certain percentage of the total coins. Black receives a percentage of the remaining coins after Ben’s share. The rest is equally shared among the three remaining friends.
+Write a Java program to:
+
+Take total coins as input.
+
+Take Ben's and Black's share percentages as input.
+
+Print each person's share.
+
+
+CODE:
+
+import java.util.Scanner;
+
+public class CoinDistribution {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of coins: ");
+        int coins = scanner.nextInt();
+
+        System.out.print("Enter Ben's share percentage: ");
+        int bens = scanner.nextInt();
+
+        System.out.print("Enter Black's share percentage (from remaining after Ben): ");
+        int black = scanner.nextInt();
+
+        int benShare = (coins * bens) / 100;
+
+        int remainingAfterBen = coins - benShare;
+        int blackShare = (remainingAfterBen * black) / 100;
+        int remaining = coins - (benShare + blackShare);
+
+        int equalShare = remaining / 3;
+        System.out.println("Ben's share is: " + benShare);
+        System.out.println("Black's share is: " + blackShare);
+        System.out.println("Leftover 3 equal shares are: " + equalShare);
+
+        scanner.close();
+    }
+}
+
+
+Weird or Not Weird
+
+3)Write a Java program that reads an integer n and prints:
+
+i)if n is odd, print "Weird"
+ii) if n is even and range is 2 and 5, print "Not Weird"
+iii) if n is even and range is 6 and 20, print "Weird"
+iv) if n is even and greaterthan 20, print "Not Weird"
+
+CODE:
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter a number: ");
+        int n = sc.nextInt();
+
+        if (n % 2 != 0 || (n >= 6 && n <= 20)) {
+            System.out.println("Weird");
+        } else {
+            System.out.println("Not Weird");
+        }
+    }
+}
+
+
+Collatz Sequence 
+
+4)Write a Java program to generate the Collatz sequence  for a given number.
+if n is even print n=n/2
+if n is odd print n=3n+1
+until it becomes 1.
+Also, count the number of steps taken to reach 1.
+
+
+CODE:
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        int n = sc.nextInt();
+        int count = 0;
+
+        while (n != 1) {
+            if (n % 2 == 0) {
+                n = n / 2;
+            } else {
+                n = 3 * n + 1;
+            }
+            System.out.println(n);
+            count++;
+        }
+
+        System.out.println("Count: " + count);
+        sc.close(); // optional
+    }
+}
+
+Seasonal Rent Calculation
+
+5)Write a Java program that calculates the total rent based on:
+
+The number of days a person stays,
+The cost per day,
+The month number (1 to 12),if month exceeds 12 print invalid
+If the month is April to June or November to December, add 20% seasonal surcharge.
+
+
+CODE:
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.printf("Count of month:");
+        int month= sc.nextInt();
+        System.out.printf("No.of days:");
+        int rent= sc.nextInt();
+        System.out.printf("Cost per day:");
+        int days= sc.nextInt();
+        double Total;
+        if(month>12){
+            System.out.println("Invalid month");
+        }
+        if(month>=4 && month<=6 || month>=11 && month<=12){
+            Total=(rent*1.2)*days;
+        }
+        else{
+            Total=(rent*days);
+        }
+        System.out.println(Total);
+    }
+}
+
+
+Trendy Number Check
+
+6)A number is called a Trendy Number if:
+
+It is a 3-digit number, and
+Its middle digit is divisible by 3.
+Write a Java program that:
+Accepts a 3-digit number from the user,
+Checks whether it's a Trendy Number, and
+Displays an appropriate message.
+
+
+CODE:
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a 3-digit number: ");
+        int number = scanner.nextInt();
+
+        if (number < 100 || number > 999) {
+            System.out.println("Not a 3-digit number.");
+            return;
+        }
+
+        int middleDigit = (number / 10) % 10;
+
+
+        if (middleDigit%3==0) {
+            System.out.println(number + " is a Trendy Number.");
+        } else {
+            System.out.println(number + " is NOT a Trendy Number.");
+        }
+    }
+}
+
+
+
