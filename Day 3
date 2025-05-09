@@ -2,29 +2,101 @@
 
 
 import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            System.out.print("Enter first number (or 0 to stop): ");
+            int a = sc.nextInt();
+            if (a == 0) break;
+
+            System.out.print("Enter second number (or 0 to stop): ");
+            int b = sc.nextInt();
+            if (b == 0) break;
+
+            int firstDigit = getFirstDigit(a);
+            int lastDigit = b % 10;
+
+            int sum = firstDigit + lastDigit;
+            int product = firstDigit * lastDigit;
+            int total = sum + product;
+
+            boolean found = false;
+
+            if (total == a) {
+                System.out.println(a + " is a special number");
+                found = true;
+            }
+            if (total == b) {
+                System.out.println(b + " is a special number");
+                found = true;
+            }
+            if (!found) {
+                System.out.println("Not a special number");
+            }
+        }
+    }
+
+    
+    static int getFirstDigit(int num) {
+        while (num >= 10) {
+            num /= 10;
+        }
+        return num;
+    }
+}
+
+
+
+
+import java.util.*;
+ public class Main
+ {
+ 	public static void main(String[] args) {
+ 	    Scanner scanner = new Scanner(System.in);
+ 	    System.out.println("enter the number: ");
+ 	    int num = scanner.nextInt();
+ 	    int sum = 0;
+ 	while(num!=0){
+ 	    int x = num % 10;
+ 	    sum = sum+ x;
+ 	    num = num/10;
+ 	    if(sum >9 & num == 0){
+ 	        num = sum;
+ 	        sum = 0;
+ 	    }
+ 	}
+ 	System.out.println("sum: "+sum);
+ 	}
+ }
+
+
+
+import java.util.*;
 public class Main{
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
-        int a= sc.nextInt();
-        int b= sc.nextInt();
-        System.out.println("Enter first number: ");
-        System.out.println("Enter second number: ");
-        int firstdigit=firstdigit/10;
-        int second_digit=(second_digit%10);
-        int sum=firstdigit+second_digit;
-        int product=firstdigit*second_digit;
-        int Sum=sum+product;
-            if(int Sum=a) 
-            {
-                System.out.printf(a);
-            }
-            if(int Sum=b) 
-            {
-                System.out.printf(b);
+        System.out.printf("Enter an integer:");
+        int n=sc.nextInt();
+        int even_sum=0;
+        int odd_sum=0;
+        int count=0;
+        while(n!=0){
+            int r=n%10;
+            if(r%2==0){
+                even_sum+=r;
             }
             else{
-                System.out.println("Not a special number");
+                odd_sum+=r;
             }
+            n=n/10;
+            count++;
+        }
+        System.out.println("Even: "+even_sum);
+        System.out.println("Odd: "+odd_sum);
+        System.out.println("Count of the digits:"+count);
     }
 }
 
