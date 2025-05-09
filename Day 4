@@ -1,0 +1,122 @@
+1) Adam's number:
+Write a program to check whether the number is Adam's number or not.
+
+CODE:
+import java.util.Scanner;
+
+public class AdamNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        int squareOriginal = n * n;
+        int reversed = reverse(n);
+        int squareReversed = reversed * reversed;
+        int reverseSquareReversed = reverse(squareReversed);
+
+        if (squareOriginal == reverseSquareReversed) {
+            System.out.println(n + " is an Adam number.");
+        } else {
+            System.out.println(n + " is NOT an Adam number.");
+        }
+    }
+
+    static int reverse(int num) {
+        int rev = 0;
+        while (num > 0) {
+            rev = rev * 10 + num % 10;
+            num /= 10;
+        }
+        return rev;
+    }
+}
+
+2)Armstrong number:
+Write a program to check whether the number is Armstrong number or not.
+
+CODE:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        int temp = n;
+        int count = 0;
+
+        while (temp != 0) {
+            temp /= 10;
+            count++;
+        }
+
+        temp = n;
+        int sum = 0;
+
+        while (temp != 0) {
+            int r = temp % 10;
+            sum += Math.pow(r, count);
+            temp /= 10;
+        }
+
+        if (sum == n) {
+            System.out.println(n + " is an Armstrong number");
+        } else {
+            System.out.println(n + " is NOT an Armstrong number");
+        }
+    }
+}
+
+3) Kaprekar number:
+Write a program to check whether the number is kaprekar numbers or not.
+
+CODE:
+import java.util.*;
+ public class Main
+ {
+ 	public static void main(String[] args) {
+ 	    int n,second,first = 0;
+ 	    Scanner sc = new Scanner(System.in);
+ 	    System.out.println("enter the number: ");
+	    int num = sc.nextInt();
+	    int sq = num * num;
+ 	    int length = 0;
+ 	    int temp = num;
+ 	    while (num != 0){
+ 	        num = num/10;
+ 	        length++;
+ 	    }
+ 	   n = (int)Math.pow(10,length);
+ 	    first = sq/n;
+ 	    second = sq%n;
+ 	    if ((first+second) == temp){
+ 	        System.out.println("yes");
+ 	    }
+ 	    else{
+ 	        System.out.println("no");
+ 	    }
+	    
+	    
+	}
+ }
+
+4) Number Patterns:
+Write a program to print "* " in reverse triangle pattern.
+
+CODE:
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		for(int i=1;i<=n;i++){
+		    for(int j=n;j>=i;j--){
+		        System.out.print("* ");
+		    }
+		    System.out.println( );
+		}
+	}
+}
