@@ -1,6 +1,7 @@
+1) Special Number:
+Write a program to check whether the number is special number or not.
 
-
-
+CODE:
 import java.util.*;
 
 public class Main {
@@ -48,9 +49,10 @@ public class Main {
     }
 }
 
+2) Sum Of Digits:
+Write a program to add all the numbers of a given integer.
 
-
-
+CODE:
 import java.util.*;
  public class Main
  {
@@ -72,8 +74,11 @@ import java.util.*;
  	}
  }
 
+3) Even Odd Sum:
+Write a program to print even values and odd values sums of a given integer as well as print count of the digits.
 
 
+CODE:
 import java.util.*;
 public class Main{
     public static void main(String[] args){
@@ -99,6 +104,32 @@ public class Main{
         System.out.println("Count of the digits:"+count);
     }
 }
+
+4) SingleDigitSum:
+Write a program to get the sum of the given integer digit values until sum value becomes single digit.
+
+CODE:
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n= sc.nextInt();
+        int count=0;
+        System.out.print("Enter an Integer:");
+        int sum=0;
+        while(n!=0)
+        {
+            int r=n%10;
+            System.out.println(r);
+            n=n/10;
+            sum=sum+r;
+        }
+        System.out.println(sum);
+        count++;
+    }
+}
+
 
 
 
